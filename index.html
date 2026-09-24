@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jieying Jin</title>
+<meta name="description" content="Jieying Jin — mathematician working in discrete geometry: symmetric circle configurations, polyhedra and polytopes.">
+
+<!--
+  ============================================================
+  如何修改这个页面（改完直接 Commit 即可，不需要其他工具）
+  ============================================================
+  1. 三张图：放进 images/ 文件夹，文件名改成下面 <img src="images/..."> 里写的名字，
+     或者把 src 改成你的文件名。没有图的地方会显示一个空框和说明文字。
+  2. 邮箱：搜索 "your-personal-email" 替换。
+  3. 链接：搜索 "TODO" 找到 Google Scholar / ORCID / GitHub / arXiv / CV 的位置。
+  4. 论文：Papers 一节第 2、3 条是占位符，填标题、合作者、arXiv 编号。
+  5. Research 一节的英文是按你的论文摘要和简历写的草稿，改成你自己的说法。
+  6. 页脚 "Last updated" 的日期。
+  ============================================================
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --paper: #f7f8f7;
+    --ink: #1e2228;
+    --ink-2: #5f6670;
+    --rule: #d9ddd8;
+    --accent: #1f5f6e;
+    --frame: #e6eeef;
+    --measure: 40rem;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #15181c;
+      --ink: #e4e6e1;
+      --ink-2: #9aa1a8;
+      --rule: #2c3137;
+      --accent: #7cb8c6;
+      --frame: #1e2a2e;
+    }
+  }
+
+  * { box-sizing: border-box; }
+  html { font-size: 112.5%; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover, a:focus-visible { text-decoration: underline; text-underline-offset: 0.15em; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  .page {
+    max-width: var(--measure);
+    margin: 0 auto;
+    padding: 4.5rem 1.25rem 4rem;
+  }
+
+  /* header */
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    letter-spacing: -0.015em;
+    line-height: 1.1;
+    margin: 0 0 0.6rem;
+  }
+  .tagline {
+    font-size: 1.15rem;
+    margin: 0 0 1.2rem;
+    color: var(--ink);
+  }
+  .meta {
+    margin: 0;
+    color: var(--ink-2);
+  }
+  nav {
+    margin: 1.6rem 0 0;
+  }
+  nav a {
+    margin-right: 1.4rem;
+    color: var(--ink);
+  }
+  nav a:last-child { margin-right: 0; }
+
+  /* the drawing */
+  .drawing {
+    margin: 2.6rem 0 1rem;
+  }
+  .drawing svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* sections */
+  section { margin-top: 3.2rem; }
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin: 0 0 1rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--rule);
+  }
+  p { margin: 0 0 1.1rem; }
+
+  figure.fig {
+    margin: 1.6rem 0 1.8rem;
+  }
+  figure.fig img {
+    display: block;
+    width: 100%;
+    height: auto;
+    background: var(--frame);
+    min-height: 11rem;
+    color: var(--ink-2);
+    padding: 1rem;
+    font-style: italic;
+  }
+  figcaption {
+    margin-top: 0.6rem;
+    font-size: 0.9rem;
+    font-style: italic;
+    color: var(--ink-2);
+  }
+
+  ul.plain { list-style: none; padding: 0; margin: 0; }
+  ul.plain li { margin: 0 0 0.9rem; }
+  ul.plain li .where { color: var(--ink-2); }
+
+  dl { margin: 0; }
+  dt { font-weight: 600; }
+  dd { margin: 0 0 0.8rem; }
+
+  footer {
+    margin-top: 3.5rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--rule);
+    color: var(--ink-2);
+    font-size: 0.9rem;
+  }
+  footer ul.plain li { display: inline; margin: 0 1.2rem 0 0; }
+
+  @media (max-width: 480px) {
+    html { font-size: 106%; }
+    .page { padding-top: 3rem; }
+    h1 { font-size: 2.1rem; }
+    nav a { margin-right: 1rem; }
+  }
+</style>
+</head>
+
+<body>
+<div class="page">
+
+  <header>
+    <h1>Jieying Jin</h1>
+    <p class="tagline">Mathematician. Discrete geometry: symmetric configurations, polyhedra and polytopes.</p>
+    <p class="meta">
+      Boston, MA<br>
+      <!-- 邮箱：把下面两个都改掉。建议放一个个人邮箱在前，NEU 邮箱在后 -->
+      <a href="mailto:your-personal-email@example.com">your-personal-email@example.com</a><br>
+      <!-- TODO: 把 cv.pdf 放进仓库根目录 -->
+      <a href="cv.pdf">Curriculum vitae (PDF)</a>
+    </p>
+    <nav aria-label="Sections">
+      <a href="#research">Research</a>
+      <a href="#papers">Papers</a>
+      <a href="#talks">Talks</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#code">Code</a>
+    </nav>
+  </header>
+
+  <!-- 装饰图：一个六重对称的点-圆构形，纯 SVG，不需要图片文件。想换成你自己的图就删掉这一块，换成 <img>。 -->
+  <div class="drawing" aria-hidden="true">
+    <svg viewBox="0 0 960 340" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" stroke="var(--accent)" stroke-width="1.3" opacity="0.85">
+        <circle cx="480" cy="170" r="60"/>
+        <circle cx="540" cy="170" r="60"/>
+        <circle cx="510" cy="118.04" r="60"/>
+        <circle cx="450" cy="118.04" r="60"/>
+        <circle cx="420" cy="170" r="60"/>
+        <circle cx="450" cy="221.96" r="60"/>
+        <circle cx="510" cy="221.96" r="60"/>
+        <circle cx="570" cy="118.04" r="60"/>
+        <circle cx="480" cy="66.08" r="60"/>
+        <circle cx="390" cy="118.04" r="60"/>
+        <circle cx="390" cy="221.96" r="60"/>
+        <circle cx="480" cy="273.92" r="60"/>
+        <circle cx="570" cy="221.96" r="60"/>
+      </g>
+      <g fill="var(--ink)">
+        <circle cx="480" cy="170" r="2.6"/>
+        <circle cx="540" cy="170" r="2.6"/>
+        <circle cx="510" cy="118.04" r="2.6"/>
+        <circle cx="450" cy="118.04" r="2.6"/>
+        <circle cx="420" cy="170" r="2.6"/>
+        <circle cx="450" cy="221.96" r="2.6"/>
+        <circle cx="510" cy="221.96" r="2.6"/>
+        <circle cx="570" cy="118.04" r="2.6"/>
+        <circle cx="480" cy="66.08" r="2.6"/>
+        <circle cx="390" cy="118.04" r="2.6"/>
+        <circle cx="390" cy="221.96" r="2.6"/>
+        <circle cx="480" cy="273.92" r="2.6"/>
+        <circle cx="570" cy="221.96" r="2.6"/>
+      </g>
+    </svg>
+  </div>
+
+  <section id="research">
+    <h2>Research</h2>
+
+    <!-- 草稿：按你的论文摘要和简历写的，请改成你自己的说法 -->
+    <p>
+      I work in discrete geometry, where polyhedra, symmetry and incidence geometry meet.
+      My dissertation, completed at Northeastern University in December 2025 under
+      Egon Schulte, studies point-circle configurations in Euclidean 3-space that come
+      from symmetric polyhedra and polytopes: the circles determined by a polyhedron's
+      vertices and edges, the incidence structure they form, and the symmetries the
+      configuration inherits from the polyhedron. For the regular skeletal polyhedra,
+      the finite and infinite periodic polyhedra classified by Grünbaum and Dress, the
+      configurations we obtain preserve every symmetry of the underlying polyhedron and
+      are, in most cases, point-circle transitive.
+    </p>
+
+    <figure class="fig">
+      <!-- 图 1：一个对称圆构形的 3D 渲染图，文件放在 images/circle-configuration.png -->
+      <img src="images/circle-configuration.png"
+           alt="Place a 3D rendering of a symmetric circle configuration here (images/circle-configuration.png).">
+      <figcaption>A symmetric circle configuration obtained from a regular skeletal polyhedron.</figcaption>
+    </figure>
+
+    <p>
+      The main tool is the E-construction, which builds a new configuration from a
+      polytope out of vertices attached to chosen edges. It turns questions about which
+      vertices of a regular skeletal polyhedron are coplanar into questions about
+      incidence, and it extends from the polyhedron itself to its flag map.
+      <!-- TODO: 下面这句填第二、三篇文章的信息 -->
+      With Egon Schulte and [collaborator], a paper on conic configurations from
+      symmetric polyhedra and polytopes is under review, and a third paper on
+      [topic] is in preparation.
+    </p>
+
+    <figure class="fig">
+      <!-- 图 2：E-construction 的示意图，文件放在 images/e-construction.png -->
+      <img src="images/e-construction.png"
+           alt="Place a figure illustrating the E-construction here (images/e-construction.png).">
+      <figcaption>The E-construction: a new configuration from vertices associated with the edges of a polytope.</figcaption>
+    </figure>
+
+    <p>
+      Three directions now interest me, each connecting these configurations to a
+      neighbouring field. In discrete differential geometry, edge-tangent (Koebe)
+      realizations of polyhedra carry circle patterns of their own, and I want to
+      understand how they relate to the symmetric configurations above. In rigidity
+      theory, the skeletal polyhedra are natural symmetric frameworks whose flexibility
+      is governed by the same symmetry groups. And computationally, I am building tools
+      in Python and SageMath to enumerate and visualize symmetric configurations, with
+      geometric design and self-assembly in view.
+    </p>
+
+    <figure class="fig">
+      <!-- 图 3（可选）：另一个构形或多面体的图，文件放在 images/polyhedron.png；不要就删掉整个 figure -->
+      <img src="images/polyhedron.png"
+           alt="Optional third figure (images/polyhedron.png).">
+      <figcaption>A regular skeletal polyhedron and the circles through its vertices.</figcaption>
+    </figure>
+  </section>
+
+  <section id="papers">
+    <h2>Papers</h2>
+    <ul class="plain">
+      <li>
+        Jieying Jin and Egon Schulte.
+        <a href="https://doi.org/10.3390/sym17020283">Symmetric circle configurations from regular skeletal polyhedra.</a>
+        <span class="where">Symmetry 17 (2025), no. 2, 283.</span>
+      </li>
+      <li>
+        <!-- TODO: 第二篇，在投 -->
+        Jieying Jin, Egon Schulte and [collaborator].
+        <a href="https://arxiv.org/abs/TODO">[Title of the submitted paper].</a>
+        <span class="where">Submitted, 2026. arXiv:TODO.</span>
+      </li>
+      <li>
+        <!-- TODO: 第三篇，在写。没挂 arXiv 之前不要放链接 -->
+        [Title of the paper in preparation].
+        <span class="where">In preparation.</span>
+      </li>
+      <li>
+        Circle configurations from symmetric polyhedra and polytopes.
+        <span class="where">Ph.D. dissertation, Northeastern University, 2025.</span>
+      </li>
+    </ul>
+  </section>
+
+  <section id="talks">
+    <h2>Talks</h2>
+    <ul class="plain">
+      <li>Women in Math in New England (MIMIN 2025), Northampton, MA. <span class="where">September 2025, student talk.</span></li>
+      <li>MAA Northeastern Section Spring Meeting, Portland, ME. <span class="where">June 2025, contributed talk.</span></li>
+      <li>Graduate Women in Mathematics Seminar, Northeastern University. <span class="where">April 2025.</span></li>
+      <li>MCCCC 35, Midwestern Conference on Combinatorics and Combinatorial Computing, Duluth, MN. <span class="where">October 2024.</span></li>
+    </ul>
+  </section>
+
+  <section id="teaching">
+    <h2>Teaching</h2>
+    <p>
+      At Northeastern I was instructor of record for Mathematical Thinking (MATH 1215),
+      Statistics and Software (MATH 2280) and Calculus for Business and Economics
+      (MATH 1231, twice), and a teaching assistant for fifteen courses ranging from
+      differential equations and linear algebra to real analysis, optimization,
+      probability and statistics, and the applied mathematics capstone. I also taught in
+      the Bridge to Calculus summer program.
+      <!-- 有教学评分可以在这里加一句，例如 average instructor rating 4.x/5 -->
+    </p>
+  </section>
+
+  <section id="code">
+    <h2>Code</h2>
+    <!-- TODO: 仓库建好后把链接填进去；画廊做好后加第二条。没有的话先留 "coming soon" -->
+    <ul class="plain">
+      <li>
+        <a href="https://github.com/TODO/symmetric-circle-configurations">symmetric-circle-configurations</a>
+        <span class="where">Python and SageMath code that builds circle configurations from symmetric polyhedra and implements the E-construction. Coming soon.</span>
+      </li>
+      <li>
+        <a href="https://TODO.github.io/gallery/">Interactive gallery</a>
+        <span class="where">Rotatable 3D views of the configurations. Coming soon.</span>
+      </li>
+    </ul>
+  </section>
+
+  <section id="background">
+    <h2>Background</h2>
+    <dl>
+      <dt>Ph.D. in Mathematics, Northeastern University, 2025</dt>
+      <dd>Advisor: Egon Schulte.</dd>
+      <dt>M.S. in Applied Mathematics, Northeastern University, 2017</dt>
+      <dd></dd>
+      <dt>B.A. in Mathematics and Physics, minor in Statistics, University of Minnesota Morris, 2015</dt>
+      <dd>HHMI summer research with Sylke Boyd on the optics of atmospheric halos, modelling light paths in hexagonal ice crystals in MATLAB and Mathematica.</dd>
+    </dl>
+  </section>
+
+  <footer>
+    <ul class="plain">
+      <!-- TODO: 填这四个链接。没有的先删掉那一行 -->
+      <li><a href="https://scholar.google.com/citations?user=TODO">Google Scholar</a></li>
+      <li><a href="https://arxiv.org/a/TODO">arXiv</a></li>
+      <li><a href="https://orcid.org/TODO">ORCID</a></li>
+      <li><a href="https://github.com/TODO">GitHub</a></li>
+    </ul>
+    <p>Last updated September 2026.</p>
+  </footer>
+
+</div>
+</body>
+</html>
